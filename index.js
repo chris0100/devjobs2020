@@ -26,7 +26,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 //validacion de campos con express validator
 app.use(expressValidator());
 
-//habilitar handlebars como view
+//habilitar handlebars como view, para leerlos
 app.engine('handlebars',
     exphbs({
         defaultLayout: 'layout',
@@ -37,7 +37,8 @@ app.engine('handlebars',
 //motor de plantillas
 app.set('view engine', 'handlebars');
 
-//static files
+
+//static files de la carpeta public css,js,img
 app.use(express.static(path.join(__dirname, 'public')));
 
 //guardar la sesion para no tener que autenticarnos continuo en la bd
@@ -52,7 +53,7 @@ app.use(session({
     store: new MongoStore({mongooseConnection: mongoose.connection})
 }));
 
-//inicializar passport
+//inicializar passport para autenticacion user
 app.use(passport.initialize());
 app.use(passport.session());
 
