@@ -83,17 +83,26 @@ app.use((error, req, res) => {
     res.render('error');
 });
 
+
+//HEROKU DEPLOYMENT
+/////////////////////////////////////////
 //Dejar que heroku asigne el puerto
-const host = '0.0.0.0';
+/*const host = '0.0.0.0';
 const port = process.env.PORT;
 
 
 app.listen(port,host, () => {
-    console.log('El servidor esta funcioando');
-});
+    console.log('El servidor esta funcionando');
+});*/
+//HEROKU DEPLOYMENT
+/////////////////////////////////////////
+
+
+/////////////////////////////////////
+//DESARROLLO CONFIGURACION
 
 //escucha al puerto
-//app.listen(process.env.PUERTO);
+app.listen(process.env.PUERTO);
 
 
 //llamada del correo
