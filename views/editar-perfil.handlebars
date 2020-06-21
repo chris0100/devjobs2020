@@ -19,7 +19,9 @@
         <div class="campo">
             <label>Imagen</label>
             <input type="file" name="imagen" placeholder="Tu imagen de perfil">
-            <img src="uploads/perfiles/{{usuario.imagen}}" class="admin-perfil-editar">
+            {{#if usuario.imagen}}
+                <img src="uploads/perfiles/{{usuario.imagen}}" class="admin-perfil-editar">
+            {{/if}}
         </div>
 
         <div class="campo">

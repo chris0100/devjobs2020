@@ -15,7 +15,7 @@ exports.formularioNuevaVacante = (req, res) => {
         cerrarSesion: true,
         nombre: req.user.nombre,
         imagen: req.user.imagen
-    })
+    });
 };
 
 
@@ -44,7 +44,7 @@ exports.agregarVacantePost = async (req,res) => {
 /////////////////////////////////////////////////
 //MOSTRAR LA VACANTE
 ////////////////////////////////////////////////
-exports.mostrarVacante = async (req, res) => {
+exports.mostrarVacante = async (req, res, next) => {
     const vacante = await Vacante.findOne({url: req.params.url}).populate('autor');
 
 

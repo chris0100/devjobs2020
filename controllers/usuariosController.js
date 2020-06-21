@@ -27,11 +27,10 @@ exports.crearCuentaPost =  async (req, res, next) => {
         res.redirect('/iniciar-sesion');
     }
     catch(error){
+        console.log(error);
         req.flash('error', error);
         res.redirect('/crear-cuenta');
     }
-
-
 };
 
 

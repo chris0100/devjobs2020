@@ -4,9 +4,9 @@ module.exports = {
         const skills = ['HTML5', 'CSS3', 'CSSGrid', 'Flexbox', 'JavaScript', 'jQuery', 'Node', 'Angular', 'VueJS', 'ReactJS', 'React Hooks', 'Redux', 'Apollo', 'GraphQL', 'TypeScript', 'PHP', 'Laravel', 'Symfony', 'Python', 'Django', 'ORM', 'Sequelize', 'Mongoose', 'SQL', 'MVC', 'SASS', 'WordPress'];
 
         let html = '';
-        skills.forEach(skill => {
+        skills.forEach(obj => {
             html += `
-            <li ${seleccionadas.includes(skill) ? 'class="activo"' : ''}>${skill}</li>
+            <li ${seleccionadas.includes(obj) ? 'class="activo"' : ''}>${obj}</li>
 `;
         });
 
@@ -27,6 +27,8 @@ module.exports = {
     //mostrar alertas
     mostrarAlertas: (errores = {}, alertas) => {
         const categoria = Object.keys(errores);
+        //categoria = error
+        //errores = arreglo de errores
 
         let html = '';
         if (categoria.length){
